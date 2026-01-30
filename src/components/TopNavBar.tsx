@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { NavLink } from "react-router"
 import { Button } from "./ui/button"
-import { ShoppingCart, User, UtensilsCrossed } from 'lucide-react';
+import { ShoppingCart, UtensilsCrossed } from 'lucide-react';
 import { useCartStore } from "@/store/useCartStore";
 
 

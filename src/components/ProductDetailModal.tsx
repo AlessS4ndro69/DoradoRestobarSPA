@@ -4,11 +4,10 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
-  DialogFooter,
+  DialogDescription
 } from "@/components/ui/dialog"; // Asegúrate de que esta ruta sea correcta según tu proyecto
 import { Button } from "@/components/ui/button";
-import { Phone, ShoppingCart, X } from "lucide-react"; // Iconos
+import { Phone, ShoppingCart } from "lucide-react"; // Iconos
 import { useCartStore } from '@/store/useCartStore';
 
 interface Product {
