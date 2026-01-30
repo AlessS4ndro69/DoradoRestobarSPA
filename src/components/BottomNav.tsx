@@ -1,7 +1,7 @@
 // src/components/BottomNav.jsx
 import { useCartStore } from '@/store/useCartStore';
 import { Home, ShoppingCart, User, FileText } from 'lucide-react';
-import {Routes, Route, Link, useLocation} from "react-router";
+import {Link, useLocation} from "react-router";
 
 export default function BottomNav() {
   const location = useLocation();
