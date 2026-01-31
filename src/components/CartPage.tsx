@@ -7,7 +7,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 export default function CartPage() {
   // Extraemos todo lo necesario
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [mount, setMount] = useState<number>(0);
+  const [mount, _setMount] = useState<number>(0);
 
   const { items, removeItem, updateQuantity, getTotalPrice } = useCartStore();
 
