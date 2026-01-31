@@ -1,6 +1,6 @@
 // src/components/BottomNav.jsx
 import { useCartStore } from '@/store/useCartStore';
-import { Home, ShoppingCart, User, FileText, Phone } from 'lucide-react';
+import { Home, ShoppingCart,  Phone } from 'lucide-react';
 import {Link, useLocation} from "react-router";
 import { Button } from './ui/button';
 
