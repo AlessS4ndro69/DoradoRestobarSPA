@@ -1,7 +1,8 @@
 // src/components/BottomNav.jsx
 import { useCartStore } from '@/store/useCartStore';
-import { Home, ShoppingCart, User, FileText } from 'lucide-react';
+import { Home, ShoppingCart, User, FileText, Phone } from 'lucide-react';
 import {Link, useLocation} from "react-router";
+import { Button } from './ui/button';
 
 export default function BottomNav() {
   const location = useLocation();
@@ -18,7 +19,7 @@ export default function BottomNav() {
   return (
     // 'md:hidden': Visible solo en móvil. Fixed bottom.
     <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 md:hidden pb-safe"> 
-      <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+      <div className="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
         
         {/* Inicio / Menú */}
         <Link to="/" className={`${baseClass} ${isActive('/') ? activeClass : inactiveClass}`}>
@@ -27,10 +28,14 @@ export default function BottomNav() {
         </Link>
 
         {/* Pedidos */}
-        <Link to="/orders" className={`${baseClass} ${isActive('/orders') ? activeClass : inactiveClass}`}>
-          <FileText className="w-6 h-6 mb-1" />
-          <span>Pedidos</span>
-        </Link>
+        <Button 
+          variant="outline"
+          className={`${baseClass} ${isActive('/') ? activeClass : inactiveClass}`}
+          onClick={() => window.open('tel:+51925968311')} // Reemplaza con tu número
+        >
+          <Phone className="w-6 h-6 mb-1" />
+          Llamar
+        </Button>
 
         {/* Carrito (Con badge opcional) */}
         <Link to="/cart" className={`${baseClass} ${isActive('/cart') ? activeClass : inactiveClass} relative`}>
@@ -45,10 +50,10 @@ export default function BottomNav() {
         </Link>
 
         {/* Perfil */}
-        <Link to="/profile" className={`${baseClass} ${isActive('/profile') ? activeClass : inactiveClass}`}>
+        {/* <Link to="/profile" className={`${baseClass} ${isActive('/profile') ? activeClass : inactiveClass}`}>
           <User className="w-6 h-6 mb-1" />
           <span>Perfil</span>
-        </Link>
+        </Link> */}
 
       </div>
     </div>

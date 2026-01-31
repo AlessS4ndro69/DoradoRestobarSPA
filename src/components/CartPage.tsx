@@ -2,6 +2,7 @@ import { useCartStore } from '@/store/useCartStore';
 import { Trash2, Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import { PaymentModal } from './PaymentModal';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function CartPage() {
   // Extraemos todo lo necesario
@@ -60,6 +61,18 @@ export default function CartPage() {
         </div>
         
         {/* Aquí iría tu botón de ir a Pagar con Stripe */}
+        <WhatsAppButton
+          className="flex items-center justify-center w-full mt-4 bg-orange-600 text-white py-3 rounded-lg font-bold"
+          phoneNumber="+51925968311"
+          message={
+            `
+            Hola, me gustaría hacer un pedido. El total es S/ ${getTotalPrice().toFixed(2)}
+            ${items.map(item => `\n - ${item.title} x${item.quantity} = S/ ${(item.price * item.quantity).toFixed(2)}`).join('')}
+            `
+          }
+          >
+          Realizar pedido
+        </WhatsAppButton>
         <button 
           className="w-full mt-4 bg-orange-600 text-white py-3 rounded-lg font-bold"
           onClick = {() => {
@@ -67,7 +80,7 @@ export default function CartPage() {
             setMount(Number(getTotalPrice().toFixed(2)));
           }}
           >
-          Ir a Pagar
+          Pagar con tarjeta
         </button>
 
         <PaymentModal 
