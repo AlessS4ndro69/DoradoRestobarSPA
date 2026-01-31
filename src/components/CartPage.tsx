@@ -73,7 +73,7 @@ export default function CartPage() {
           >
           Realizar pedido
         </WhatsAppButton>
-        <button 
+        {/* <button 
           className="w-full mt-4 bg-orange-600 text-white py-3 rounded-lg font-bold"
           onClick = {() => {
             setIsModalOpen(true);
@@ -81,7 +81,7 @@ export default function CartPage() {
           }}
           >
           Pagar con tarjeta
-        </button>
+        </button> */}
 
         <PaymentModal 
           isOpen={isModalOpen} 
